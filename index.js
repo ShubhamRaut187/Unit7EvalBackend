@@ -10,6 +10,12 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+
+app.get("/",(req,res)=>{
+    res.send("Welcome to Todo App");
+})
+
+
 app.post("/signup",async(req,res)=>{
     const{name,email,password} = req.body;
     const Hashed_Password = bcrypt.hashSync(password,8);
